@@ -1,0 +1,227 @@
+:root {
+    --font-family: 'Kumbh Sans', sans-serif;
+    /*Primary text */
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    
+    /* gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+    /* Nuetral text */
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* divider */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*::before {
+    box-sizing: inherit;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: 1em;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--white);
+    padding: 0.2em 1em;
+    border-radius: 1em;
+
+}
+
+.hidden {
+    display: none;
+    transition: .3s ease-in-out;
+
+}
+
+.picture-banner {
+    display: flex;
+    justify-content: center;
+    background-image: url('/images/bg-pattern-mobile.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 0;
+    background-size: 85%;
+    margin-bottom: -3.5em;
+}
+
+.picture-banner .banner-img-desktop{
+    display: none;
+}
+
+.picture-banner .illustration-box {
+    display: none;
+}
+
+.picture-banner .banner-img-mobile {
+    width: 85%;
+    transform: translateY(-60%);
+}
+
+.faq-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--white);
+    width: 23em;
+    max-width: 100%;
+    margin: 9em 0;
+    padding: 0 1.7em 1.7em 1.7em;
+    border-radius: 1.5em;
+}
+
+.faq-area .question-card {
+    border-bottom: 0.1em solid var(--light-grayish-blue);
+}
+
+.faq-area .question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* gap: 2.5em; */
+    padding: 1.2em 0;
+}
+
+.faq-area h1 {
+    font-size: 2.5rem;
+    padding-bottom: .7em;
+    text-align: center;
+    color: var(--very-dark-desaturated-blue);
+}
+
+.faq-area .header-active {
+    font-weight: 700;
+    color: var(--very-dark-desaturated-blue);
+
+}
+
+.faq-area h2 {
+    font-size: .9rem;
+    font-weight: 400;
+    color: var(--very-dark-grayish-blue);
+}
+
+
+.faq-area h2:hover {
+    cursor: pointer;
+    color: var(--soft-red);
+    
+}
+
+.faq-area .answer {
+    font-size: 0.85rem;
+    padding-bottom: 1.6em;
+    padding-right: 1em;
+    color: var(--dark-grayish-blue);
+    transition: .3s ease-in-out;
+
+}
+
+.faq-area .arrow-svg {
+    height: 100%;
+    transition: .3s ease-in-out;
+
+}
+
+.faq-area .arrow-svg.active {
+    transform: rotate(180deg);
+    transition: .3s ease-in-out;
+}
+
+
+@media (min-width:55em) {
+
+    body {
+        padding: 0 1em 0 5em;
+    }
+
+    .picture-banner .banner-img-mobile {
+        display: none;
+    }
+
+    .picture-banner .banner-img-desktop {
+        display: flex;
+        height: 63%;
+        transform: translate(-17%, 22%);
+    }
+
+    .picture-banner .illustration-box {
+        display: flex;
+        height: 33%;
+        position: absolute;
+        left: -8em;
+        top: 40%;
+    }
+
+    .picture-banner {
+        background-image: url('/images/bg-pattern-desktop.svg');
+        overflow: hidden;
+        background-size: cover;
+        background-position: top;
+        background-position-x: 115.5%;
+        background-position-y: 76%;
+        background-size: 210%;
+    }
+
+    .faq-card {
+        grid-template-columns: 1.2fr 1fr;
+        width: 57em;
+        min-height: 35em;
+        padding: 0 1.7em 1.7em 0em;
+        margin: 0;
+    }
+
+    .faq-area {
+        padding-right: 4em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        padding-top: 4.5em;
+
+    }
+
+    .faq-area h1 {
+        padding-bottom: 0;
+        text-align: left;
+    }
+}
+
+@media (min-width: 68em) {
+    body {
+        padding: 0 1em;
+    }
+
+    
+}
+
+
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
