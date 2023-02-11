@@ -147,6 +147,7 @@ footer {
 .faq-area .arrow-svg {
     height: 100%;
     transition: .3s ease-in-out;
+    cursor: pointer;
 
 }
 
